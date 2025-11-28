@@ -1,0 +1,22 @@
+<!-- WAp to demonstrate change in properties of HTML element using JavaScript. -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div id="box" style="height: 300px; width: 300px; background: blanchedalmond;"> orignal text</div>
+    <button onclick="changeProperties()">chnage properties</button>
+    
+    <script>
+        function changeProperties(){
+            const box = document.getElementById("box");
+
+        box.style.backgroundColor = "black";
+        box.innerHTML = "Properties are chnage";
+        box.style.color = "White";
+        }
+    </script>
+ </body>
+ </html>

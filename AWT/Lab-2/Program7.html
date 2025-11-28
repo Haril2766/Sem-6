@@ -1,0 +1,62 @@
+<!-- WAP program to Perform CRUD opration on Array Using HTML And Js  -->
+ 
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+<input type="text" id="txt" placeholder="Enter value">
+
+<button onclick="addValue()">Add</button>
+<button onclick="editValue()">Edit</button>
+<button onclick="readArray()">Read</button>
+<button onclick="deleteValue()">Delete</button>
+
+
+<script>
+    let a = [];
+
+function addValue() {
+    let val = document.getElementById("txt").value.trim();
+    if(val === "") return alert("Enter a value");
+
+    arr.push(val);
+    alert("Value Added!");
+    document.getElementById("txt").value = "";
+}
+function editValue(){
+    let val = document.getElementById("txt").value;
+    let index = arr.indexof(val);
+    if(index === -1){
+        return alert("Value not found");
+    }
+    let newValue = prompt("Enter new value to replace '" + oldValue + "' :");
+
+    if(newValue === null || newValue.trim() === "")
+        return alert("New value cannot be empty");
+
+    arr[index] = newValue;
+    alert("Value Updated!");
+}
+function readArray() {
+                    document.getElementById("result").
+                    innerText = "[" + arr.join(", ") + "]";
+}
+function deleteValue(){
+    let val = document.getElementById("txt").value.trim();
+    if(val === "") return alert("Enter value to delete");
+
+    let index = arr.indexOf(val);
+    if(index === -1) return alert("Value not found");
+
+    arr.splice(index, 1);
+    alert("Value Deleted!");
+}
+ 
+   
+</script>
+ </body>
+ </html>

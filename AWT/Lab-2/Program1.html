@@ -1,0 +1,20 @@
+<!-- WAP to change bg color on click of button.-->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <button onclick="changeBG()">change color</button>
+    
+    <script>
+        function changeBG(){
+            let colors = ["red", "green", "blue", "yellow", "pink", "purple", "orange"];
+            let rc = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.style.backgroundColor = rc;
+        }
+    </script>
+ </body>
+ </html>

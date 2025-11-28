@@ -1,0 +1,116 @@
+<!-- WAP to prepare student registration form and validate it using js -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Student Name: 
+    <input type="text" id="name">
+    <br><br>
+
+    Birthdate: 
+    <input type="date" id="bd">
+    <br><br>
+
+    Email: 
+    <input type="email" id="email">
+    <br><br>
+
+    Password:
+    <input type="password" id="password">
+    <br><br>
+
+    Enrollment No (12 digits):
+    <input type="number" id="enroll">
+    <br><br>
+
+    Semester:
+    <input type="number" id="sem">
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let bd = document.getElementById("bd").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    let enroll = document.getElementById("enroll").value;
+    let sem = document.getElementById("sem").value;
+
+    // Name validation
+    if (name.trim() === "") {
+        alert("Student name must be entered.");
+        return false;
+    }
+
+    // Age validation 18+
+    if (!bd) {
+        alert("Birthdate must be selected.");
+        return false;
+    }
+
+    let birth = new Date(bd);
+    let today = new Date();
+    let age = today.getFullYear() - birth.getFullYear();
+    let m = today.getMonth() - birth.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--;
+    }
+
+    if (age < 18) {
+        alert("Age must be at least 18 years.");
+        return false;
+    }
+
+    // Email validation (must contain @ and .)
+    if (!(email.includes("@") && email.includes("."))) {
+        alert("Email must contain '@' and '.'.");
+        return false;
+    }
+
+    // Password validation
+    let uppercase = /[A-Z]/;
+    let special = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (!uppercase.test(pass)) {
+        alert("Password must contain at least one CAPITAL letter.");
+        return false;
+    }
+
+    if (!special.test(pass)) {
+        alert("Password must contain at least one SPECIAL character.");
+        return false;
+    }
+
+    // Enrollment number (12 digits)
+    if (enroll.length !== 12) {
+        alert("Enrollment number must be exactly 12 digits.");
+        return false;
+    }
+
+    // Semester validation
+    if (sem === "" || sem <= 0) {
+        alert("Semester must be entered.");
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>

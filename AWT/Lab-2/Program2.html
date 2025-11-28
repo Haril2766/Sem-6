@@ -1,0 +1,32 @@
+<!-- WAP program to recognize which mouse event is fired. -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <div id="box" 
+     style="width:300px; height:150px; background:lightgray; border:2px solid black; padding:20px;">
+    Move / Click / Double-Click / Right-Click Here
+</div>
+
+<script>
+    let box = document.getElementById("box");
+
+    box.addEventListener("click", function () {
+        alert("Mouse Event Fired: CLICK");
+    });
+
+    box.addEventListener("mouseover", function () {
+        alert("Mouse Event Fired: MOUSE OVER");
+    });
+
+    box.addEventListener("mouseout", function () {
+        alert("Mouse Event Fired: MOUSE OUT");
+    });
+
+    
+</script>
+ </body>
+ </html>

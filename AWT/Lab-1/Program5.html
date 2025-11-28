@@ -1,0 +1,31 @@
+<!-- convert celcius into fahranhite and vice-versa -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let choise = parseInt(prompt("Write 1 for cel to fer and write 2 for fer to cel"));
+        let temp = parseFloat(prompt("Enter tempreture : "));
+         let result;
+
+        switch (choise) {
+        case 1:
+            result = (temp * 9/5) + 32;
+            alert(temp + "°C = " + result + "°F");
+            break;
+
+        case 2:
+            result = (temp - 32) * 5/9;
+            alert(temp + "°F = " + result + "°C");
+            break;
+
+        default:
+            alert("Invalid choise!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="checkData()">
+
+       User Name -  <input type="text" placeholder=" Minimum 8 Charater" id="Username">
+
+        <br>
+        <br>
+
+        Password - <input type="password" placeholder="ENter password" id="Password">
+        <br>
+        <br>
+
+        recheck password - <input type="password" id="ConPass">
+        <br>
+        <br>
+        bd - <input type="date" id="Bd">
+        <br><br>
+
+        enrollment no. - <input type="number" id="enrollment">
+
+        <br><br>
+        email - <input type="email" id="email">
+
+        <input type="submit">
+    </form>
+
+   <script>
+        function checkData() {
+
+            let username = document.getElementById("Username").value;
+            let pass = document.getElementById("Password").value;
+            let conpass = document.getElementById("ConPass").value;
+            let bd = document.getElementById("Bd").value;
+            let enroll = document.getElementById("enrollment").value;
+            let email = document.getElementById("email").value;
+
+            if (username.length < 8) {
+                alert("Username must be at least 8 characters.");
+                return false;
+            }
+
+            if (pass.length < 8) {
+                alert("Password must be at least 8 characters.");
+                return false;
+            }
+
+
+            if (pass !== conpass) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            if (!bd) {
+                alert("Please select your birthdate.");
+                return false;
+            }
+
+            let today = new Date();
+            let birthDate = new Date(bd);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let month = today.getMonth() - birthDate.getMonth();
+
+            if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                alert("Age must be 18 or above.");
+                return false;
+            }
+
+            if (enroll === "") {
+                alert("Enrollment number cannot be empty.");
+                return false;
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Enter a valid email address.");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html> 

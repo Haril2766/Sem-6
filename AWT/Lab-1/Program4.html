@@ -1,0 +1,42 @@
+<!-- Write a program to implement basic calculatar -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let num1 = parseFloat(prompt("Enter first number:"));
+    let num2 = parseFloat(prompt("Enter second number:"));
+    let opration = prompt("selct operator  from this -> (+, -, *, /):");
+
+    let result;
+
+    switch (opration) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 === 0) {
+                result = "Cannot divide by zero!";
+            } else {
+                result = num1 / num2;
+            }
+            break;
+        default:
+            result = "Invalid operator!";
+    }
+
+    alert("Result: " + result);
+</script>
+
+</body>
+</html>
