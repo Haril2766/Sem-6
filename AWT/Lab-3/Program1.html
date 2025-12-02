@@ -1,0 +1,25 @@
+<!-- WAP to demonstrate callbacks in javascript. -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+        function diff(a,b){
+            return a-b;
+        }
+        function test(str,callback){
+            document.write(str + " : "+ callback(10,5)); 
+        }
+         test("Sum is", sum);
+        document.write("<br>");
+        test("Difference is", diff);
+    </script>
+</body>
+</html>

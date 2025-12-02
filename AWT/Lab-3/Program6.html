@@ -1,0 +1,42 @@
+<!-- Demonstrate the Array and Object Destructuring.  -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+    <script>
+        arr =[{
+            id : 1,
+            name : "Haril"
+        },
+        {
+            id : 2,
+            name : "Huri"
+        },
+        {
+            id : 3,
+            name : "Meggi"
+        }]
+
+        document.write("array <br>");
+        document.write(arr[0].name  + "<br>");
+        document.write(arr[1].name + "<br>");
+        document.write(arr[2].name + "<br>");
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+       
+        let { id, name } = arr[1];
+
+        document.write("Object <br>");
+        document.write("Id : "+ id +"<br>");
+        document.write("Name : "+name)
+
+</script>
+ </body>
+ </html>

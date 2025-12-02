@@ -1,0 +1,37 @@
+<!-- 2. Demonstrate the difference between let and var. -->
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // var i =5;
+        // let j =10;
+        // let i =10;
+        // output -> Uncaught SyntaxError: Identifier 'i' has already been declared
+
+        // i=10;
+        // var i;
+        // j=5;
+        // let j;
+        //output --> Program2.html:16 Uncaught ReferenceError: Cannot access 'j' before initialization
+
+
+        let i =3;
+        let j =4;
+        //->run properly
+
+        for(let i = 0;i<10;i+=2){
+            console.log(i)
+        }
+
+        console.log("----------------");
+        console.log(i);
+        console.log(j);
+
+
+    </script>
+ </body>
+ </html>

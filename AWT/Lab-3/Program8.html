@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Student {
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+        
+            display() {
+                document.write("ID : " + this.id + "<br>");
+                document.write("Name : " + this.name + "<br>");
+            }
+        }
+
+        let s1 = new Student(1, "Haril");
+        let s2 = new Student(2, "Huri");
+        let s3 = new Student(3,"Meggi");
+
+        s1.display();
+        document.write("<br>");
+        s2.display();
+        document.write("<br>");
+        s3.display();
+
+</script>
+</body>
+</html>
